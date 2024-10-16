@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+body {
+	font-family: "Manrope", sans-serif;
+}
+
+section.coral-custom-section {
+	max-width: 1530px;
+	margin: 0 auto;
+	background: chartreuse;
+
+	img {
+		width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: cover;
+	}
+
+	h3 {
+		color: var(--colorText, rgba(0, 0, 0, 0.88));
+		font-size: 30px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 1.3;
+		margin: 0;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+.coral-main-btn {
+	border-radius: var(--radius-borderRadiusXXXXL, 64px);
+	background: var(--CORAL-main_blue, #0093d0);
+	color: var(--CORAL-white, #fff);
+	leading-trim: both;
+	text-edge: cap;
+	font-family: Manrope;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 1.3;
+	padding: 13px 24px;
+	text-decoration: none;
+	transition: background 300ms ease;
+
+	&:hover {
+		background: #33c2ff;
+	}
+
+	&:active {
+		background: #077dad;
+	}
+}
