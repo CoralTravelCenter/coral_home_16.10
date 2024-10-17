@@ -2,22 +2,18 @@ import {insertOnseHtml, sliderParams} from "../../utils";
 import {generateNextButton, generatePrevButton} from "../SliderNavBtn/slider-nav-btn.js";
 
 (function () {
-	const target_el = document.querySelector("[data-narrow-slider]");
+	const target_el = document.querySelector("[data-brand-slider]");
 
-	const markup = window.narrow_slider
+	const markup = window.our_brand_slider
 		.map((el) => {
 			return `
 				<swiper-slide>
-					<div class="content">
-						<div class="text-content">
-							<h3>${el.title}</h3>
-							<p>${el.paragraph}</p>
-							<a class='coral-main-btn' href=${el.button_link} target="_blank">${el.button_text}</a>
+					<a href="${el.go_to_url}">
+						<div class="content" style="background-image: url(${el.brand_background_desktop});">
+							<div class="content-wrapper">
+							</div>
 						</div>
-						<div class="visual">
-							<img src=${el.img}>
-						</div>
-					</div>
+					</a>
 				</swiper-slide>
 			`;
 		})
@@ -27,6 +23,6 @@ import {generateNextButton, generatePrevButton} from "../SliderNavBtn/slider-nav
 	insertOnseHtml("afterend", generateNextButton(), target_el);
 	insertOnseHtml("beforebegin", generatePrevButton(), target_el);
 
-	Object.assign(target_el, sliderParams('section.narrow-slider'));
+	Object.assign(target_el, sliderParams('section.brand-slider'));
 	target_el.initialize();
 })();

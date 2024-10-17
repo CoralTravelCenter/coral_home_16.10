@@ -1,21 +1,35 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
+		<meta charset="UTF-8"/>
 		<link
 			rel="stylesheet"
 			href="https://b2ccdn.coral.ru/content/scripts/tippyanimationsscale.css"
 		/>
-		<link rel="stylesheet" href="./global.scss" />
-		<link rel="stylesheet" href="./components/NarrowSlider/narrow.scss" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./global.scss"/>
+		<link rel="stylesheet" href="./components/NarrowSlider/narrow.scss"/>
+		<link rel="stylesheet" href="./components/OurHotels/our-hotels.scss"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<title>Coral-Home</title>
 	</head>
 	<body>
 		<div id="app">
 			<section class="coral-custom-section narrow-slider">
 				<div class="coral-custom-section-wrapper">
-					<swiper-container data-narrow-slider></swiper-container>
+					<swiper-container
+						data-narrow-slider
+						init=false
+					>
+					</swiper-container>
+				</div>
+			</section>
+			<section class="coral-custom-section brand-slider">
+				<div class="coral-custom-section-wrapper">
+					<swiper-container
+						data-brand-slider
+						init=false
+					>
+					</swiper-container>
 				</div>
 			</section>
 		</div>
@@ -27,5 +41,12 @@
 			type="module"
 			src="./components/NarrowSlider/narrow.js"
 		></script>
+		<script src="./components/OurHotels/our-hotels-settings.js"></script>
+		<script
+			type="module"
+			src="./components/OurHotels/our-hotels-slider.js"
+		></script>
 	</body>
 </html>
+
+
