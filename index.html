@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="./components/Rixos/rixos.scss"/>
 		<link rel="stylesheet" href="./components/Bronirovanie/bronirovanie.scss"/>
 		<link rel="stylesheet" href="./components/Bonus/bonus-banner.scss"/>
+		<link rel="stylesheet" href="./components/PayAttention/pay-attention.scss"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<title>Coral-Home</title>
 	</head>
@@ -123,6 +124,16 @@
 					</div>
 				</div>
 			</section>
+			<section class="coral-custom-section pay-attention">
+				<h2>Обратите внимание</h2>
+				<div class="coral-custom-section-wrapper">
+					<swiper-container
+						data-pay-attention-slider
+						init=false
+					>
+					</swiper-container>
+				</div>
+			</section>
 		</div>
 		<script src="https://b2ccdn.coral.ru/content/scripts/poppermin.js"></script>
 		<script src="https://b2ccdn.coral.ru/content/scripts/tippy-bundleumdmin.js"></script>
@@ -141,6 +152,8 @@
 			type="module"
 			src="./components/Rixos/rixos.js"
 		></script>
+		<script src="./components/PayAttention/pay-attention-settings.js"></script>
+		<script type="module" src="./components/PayAttention/pay-attention.js"></script>
 	</body>
 </html>
 
