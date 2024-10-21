@@ -4,4 +4,4 @@ function rixoxBannerInit() {
 	vimeoAutoPlay();
 }
 
-rixoxBannerInit()
+if (!window.location.origin.includes('backoffice')) rixoxBannerInit()

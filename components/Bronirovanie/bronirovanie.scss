@@ -1,10 +1,17 @@
+.layout-container-limit:has(section.bronirovanie) {
+	overflow-x: visible;
+}
+
 section.bronirovanie {
-	background: url("../../img/promotions.jpg");
+	background: url("https://b2ccdn.coral.ru/content/landing-pages/home/bronirovanie-bg.webp"), #F1F7FB;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: right bottom;
 	width: 100vw;
 	max-width: unset;
+	left: 50%;
+  position: relative;
+  transform: translateX(-50%);
 
 	.coral-custom-section-wrapper {
 		display: flex;

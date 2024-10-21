@@ -1,7 +1,7 @@
 section.bonus-banner {
 	.coral-custom-section-wrapper {
 		padding-top: 40px;
-		max-width: var(--container-widthout-slider);
+	
 	}
 
 	.baners {
@@ -16,7 +16,7 @@ section.bonus-banner {
 			flex-direction: column;
 			align-items: start;
 			justify-content: end;
-			background: url("../../img/bonus-big.jpg");
+			background: url("https://b2ccdn.coral.ru/content/landing-pages/home/bonus-big.webp");
 			background-repeat: no-repeat;
 			background-size: cover;
 			border-radius: 24px;
@@ -52,7 +52,7 @@ section.bonus-banner {
 
 		.small-one {
 			padding: 11px;
-			background: url("../../img/bonus-small.jpg");
+			background: url("https://b2ccdn.coral.ru/content/landing-pages/home/bonus-small.webp");
 			background-repeat: no-repeat;
 			background-size: cover;
 			border-radius: 24px;

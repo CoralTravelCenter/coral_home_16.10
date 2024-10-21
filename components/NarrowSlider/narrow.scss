@@ -1,3 +1,8 @@
+.layout-container-limit:has(section.narrow-slider) {
+	padding: 0 !important;
+	max-width: unset !important;
+}
+
 section.narrow-slider {
 	padding-top: 40px;
 	.coral-custom-section-wrapper {
@@ -27,6 +32,13 @@ section.narrow-slider {
 				.visual {
 					border-radius: 20px;
 					overflow: hidden;
+					position: relative;
+
+					#narrow-tooltip-toggler {
+						position: absolute;
+						top: 16px;
+						right: 16px;
+					}
 				}
 			}
 		}

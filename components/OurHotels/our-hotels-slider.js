@@ -1,18 +1,21 @@
 import {insertOnseHtml, mediaMatcher, sliderParams} from "../../utils";
 import {generateNextButton, generatePrevButton} from "../SliderNavBtn/slider-nav-btn.js";
 
-(function () {
+function brandsSliderInit() {
 	const target_el = document.querySelector("[data-brand-slider]");
 	const target_el_bg = document.querySelector('[data-brand-bg-slider]');
 
 	const main_slider_markup = window.our_brand_slider
-		.map((el) => {
+		.map((el, idx) => {
 			return `
-				<swiper-slide>
-					<a href="${el.go_to_url}">
-						<div class="content" style="background-image: url(${el.brand_background_logo});">
+				<swiper-slide ${(el.black_content) ? 'black-content' : ''}>
+						<div class="content">
+							${(idx === 3) ? `<img class="hotel-logo coral-group" src=${el.brand_logo} alt="">` : `<img class="hotel-logo" src=${el.brand_logo} alt="">`}
+							<h3>${el.brand_name}</h3>
+							${(el.brand_text !== '') ? `<p>${el.brand_text}</p>` : ''}
+							<a href="${el.go_to_url}" class="coral-main-btn">Узнать больше</a>
+							<span class="advister">Реклама. ООО «ТО КОРАЛ ТРЕВЕЛ ЦЕНТР»</span>
 						</div>
-					</a>
 				</swiper-slide>
 			`;
 		})
@@ -43,4 +46,6 @@ import {generateNextButton, generatePrevButton} from "../SliderNavBtn/slider-nav
 	target_el.initialize();
 	Object.assign(target_el_bg, bg_slider_settings);
 	target_el_bg.initialize();
-})();
+}
+
+if (!window.location.origin.includes('backoffice')) brandsSliderInit()
