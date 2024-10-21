@@ -1,52 +1,50 @@
 section.brand-slider {
+	position: relative;
+	height: 430px;
 	.coral-custom-section-wrapper {
-		position: relative;
-		min-height: calc(430px + 40px);
 		justify-content: space-between;
+		height: 100%;
 	}
 
-	swiper-container {
-		position: absolute;
-		top: 20px;
-		left: 50%;
-		width: 100vw;
-		transform: translateX(-50%);
-		min-height: calc(430px + 40px);
+	swiper-container[data-brand-slider] {
+		z-index: 2;
+		position: relative;
+		height: 100%;
 
 		swiper-slide {
 			a {
 				display: block;
-			}
-			
-			.content {
-				min-height: calc(430px + 40px);
-				background-repeat: no-repeat;
-				background-position: center;
-				background-size: cover;
-
-				.content-wrapper {
-					max-width: min(87%, 1242px);
-					padding: 0;
-					min-height: calc(430px + 40px);
-					margin: 0 auto;
-					display: flex;
-					flex-direction: column;
-					align-items: start;
-					gap: 12px;
-					justify-content: center;
+				height: 430px;
+				.content {
+					height: 100%;
 					background-repeat: no-repeat;
-					background: red;
+					background-position: left center;
+					background-size: 27%;
+
+					.content-wrapper {
+						max-width: min(87%, 1242px);
+						padding: 0;
+						min-height: calc(430px + 40px);
+						margin: 0 auto;
+						display: flex;
+						flex-direction: column;
+						align-items: start;
+						gap: 12px;
+						justify-content: center;
+						background-repeat: no-repeat;
+						border: 1px solid red;
 
 
-					.visual {
-						max-width: 112px;
-						height: 80px;
+						.visual {
+							max-width: 112px;
+							height: 80px;
 
-						> img {
-							width: 100%;
-							height: 100%;
-							object-fit: contain;
-							display: block;
+							> img {
+								width: 100%;
+								height: 100%;
+								object-fit: contain;
+								display: block;
+							}
 						}
 					}
 				}
@@ -70,4 +68,23 @@ section.brand-slider {
 			background: #fff;
 		}
 	}
+
+	swiper-container[data-brand-bg-slider] {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 100vw;
+		height: 100%;
+		z-index: 1;
+		transform: translateX(-50%);
+		pointer-events: none;
+
+		swiper-slide {
+			height: 430px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+	}
 }
+

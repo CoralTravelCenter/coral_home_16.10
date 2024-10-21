@@ -1,11 +1,14 @@
 export function insertOnseHtml(position, markup, element) {
-	element.insertAdjacentHTML(position, markup);
+	if (!element.dataset.inserted) {
+		element.insertAdjacentHTML(position, markup);
+		element.setAttribute('inserted', true);
+	}
 }
 
 export function sliderParams(selector) {
 	return {
 		slidesPerView: 1,
-		autoHeight: true,
+		spaceBetween: 0,
 		loop: true,
 		navigation: {
 			prevEl: `${selector} .slider-bnt-prev`,
@@ -60,4 +63,12 @@ export async function vimeoAutoPlay(observer_options = {}) {
 		}, Object.assign({}, {threshold: .33}, observer_options));
 		vboxes.forEach(box => io.observe(box));
 	}
+}
+
+export function mediaMatcher(size, callback) {
+	const mobileWidthMediaQuery = window.matchMedia(`(max-width: ${size}px)`);
+	callback(mobileWidthMediaQuery.matches);
+	mobileWidthMediaQuery.addEventListener("change", (e) =>
+		callback(e.matches),
+	);
 }

@@ -11,11 +11,11 @@ import {generateNextButton, generatePrevButton} from "../SliderNavBtn/slider-nav
 					<div class="content">
 						<div class="text-content">
 							<h3>${el.title}</h3>
-							<p>${el.paragraph}</p>
+							${(el.paragraph) ? `<p>${el.paragraph}</p>` : ''}
 							<a class='coral-main-btn' href=${el.button_link} target="_blank">${el.button_text}</a>
 						</div>
 						<div class="visual">
-							<img src=${el.img}>
+							<img src=${el.img} alt="">
 						</div>
 					</div>
 				</swiper-slide>

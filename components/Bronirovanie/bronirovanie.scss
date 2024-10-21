@@ -12,11 +12,10 @@ section.bronirovanie {
 		align-items: start;
 		justify-content: center;
 		gap: 12px;
-		max-width: 1370px;
   	margin: 0 auto;
   	position: relative;
-  	padding: 0 16px;
 		min-height: 516px;
+		max-width: var(--container-widthout-slider);
 
 		ul {
 			margin: 0;

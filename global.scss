@@ -1,23 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
+:root {
+	--section-width: 1530px;
+	--container-width: 1370px;
+	--container-widthout-slider: 1244px;
+	--container-padding-block: 20px;
+	--container-padding-inline: 16px;
+	--transtion: 300ms ease;
+}
+
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
 body {
 	font-family: "Manrope", sans-serif;
 	margin: 0;
 }
 
 section.coral-custom-section {
-	background: chartreuse;
-	max-width: 1530px;
+	background: lightpink;
+	max-width: var(--section-width);
 	margin: 0 auto;
+	padding: var(--container-padding-block) var(--container-padding-inline);
+
+	.coral-custom-section__headline {
+		width: 100%;
+		margin: 0 auto 16px;
+		max-width: var(--container-widthout-slider);
+
+		h2 {
+			color: var(--colorText, rgba(0, 0, 0, 0.85));
+			font-size: 28px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 1.3;
+			margin: 0;
+		}
+	}
 
 	.coral-custom-section-wrapper {
-		max-width: 1370px;
+		max-width: var(--container-width);
 		margin: 0 auto;
 		position: relative;
-		padding: 20px 16px;
 		display: flex;
 		gap: 24px;
 		align-items: center;
+		padding: 0;
 	}
 
 	img {
@@ -28,7 +57,7 @@ section.coral-custom-section {
 	}
 
 	h3 {
-		color: var(--colorText, rgba(0, 0, 0, 0.88));
+		color: rgba(0, 0, 0, 0.88);
 		font-size: 30px;
 		font-style: normal;
 		font-weight: 600;
@@ -38,7 +67,7 @@ section.coral-custom-section {
 
 	p {
 		margin: 0;
-		color: var(--colorTextSecondary, rgba(0, 0, 0, 0.65));
+		color: rgba(0, 0, 0, 0.65);
 		font-size: 16px;
 		font-style: normal;
 		font-weight: 400;
@@ -47,9 +76,9 @@ section.coral-custom-section {
 }
 
 .coral-main-btn {
-	border-radius: var(--radius-borderRadiusXXXXL, 64px);
-	background: var(--CORAL-main_blue, #0093d0);
-	color: var(--CORAL-white, #fff);
+	border-radius:  64px;
+	background: #0093d0;
+	color: #fff;
 	font-size: 12px;
 	font-style: normal;
 	font-weight: 600;
@@ -57,20 +86,29 @@ section.coral-custom-section {
 	padding: 13px 24px;
 	text-decoration: none;
 	flex-shrink: 0;
-	transition: background 300ms ease;
+	transition: all var(--transtion);
+	border: 1px solid #0093d0;
 
 	&:hover {
 		background: #33c2ff;
+		border: 1px solid #33c2ff;
 	}
 
 	&:active {
 		background: #077dad;
+		border: 1px solid #077dad;
 	}
 }
 
 .coral-main-btn.white {
 	background: #fff;
 	color: #000;
+	border: 1px solid #fff;
+
+	&:hover {
+		color: #66d1ff;
+  	border-color: #66d1ff;
+	}
 }
 
 .custom-slider-nav-btn {
@@ -78,7 +116,7 @@ section.coral-custom-section {
 	width: 40px;
 	height: 40px;
 	border-radius: 40px;
-	background: var(--white, #FFF);
+	background: #FFF;
 	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.10);
 	padding: 0;
 	border: 1px solid #fff;
@@ -86,13 +124,12 @@ section.coral-custom-section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: border-color 300ms ease;
-	transform: translateY(-50%);
+	transition: border-color var(--transtion);;
 	position: relative;
 	z-index: 3;
 
 	svg path {
-		transition: stroke 300ms ease;
+		transition: stroke var(--transtion);
 	}
 
 	&:hover {
@@ -104,11 +141,8 @@ section.coral-custom-section {
 	}
 }
 
-.custom-slider-nav-btn.slider-bnt-prev svg {
-	margin-right: 4px;
-}
-
 swiper-container {
+	--bullet: 10px;
 	width: calc(100% - ((40px + 24px) * 2));
 
 	&::part(pagination) {
@@ -117,14 +151,14 @@ swiper-container {
 	}
 
 	&::part(bullet) {
-		width: 10px;
-		height: 10px;
+		width: var(--bullet);
+		height: var(--bullet);
 		background: #33C2FF;
 	}
 
 	&::part(bullet-active) {
-		width: 10px;
-		height: 10px;
+		width: var(--bullet);
+		height: var(--bullet);
 		background: #077DAD;
 	}
 }
