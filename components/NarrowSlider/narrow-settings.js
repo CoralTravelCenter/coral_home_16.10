@@ -10,7 +10,6 @@ window.narrow_slider = [
 			alt: 'Заполняется SEO командой'
 		}
 	},
-
 	{
 		erid: "LjN8KFseD",
 		title: "В Дубай за новыми<br> впечатлениями",

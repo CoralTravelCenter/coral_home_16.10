@@ -18,10 +18,46 @@ section.rixos-elite-banner .baners .big-one {
 	overflow: hidden;
 	position: relative;
 	display: block;
-	background: url(https://b2ccdn.coral.ru/content/home/rixos_egypt_desktop_cover.webp);
+	background: url(https://b2ccdn.coral.ru/content/landing-pages/home/rixos-bg-no-text.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+}
+
+section.rixos-elite-banner .baners .big-one .content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 16px;
+	gap: 24px;
+	height: 100%;
+
+	.content-logo {
+		max-width: 230px;
+		height: 60px;
+		object-fit: contain;
+	}
+
+	.content-slogan {
+		color: #FFF;
+		text-align: center;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 300;
+		line-height: 1
+	}
+
+	.content-title {
+		max-width: 500px;
+		height: 25px;
+		object-fit: contain;
+	}
+
+	.advister {
+		font-size: 12px;
+		color: #fff;
+	}
 }
 
 section.rixos-elite-banner .baners .big-one img {
@@ -41,20 +77,20 @@ section.rixos-elite-banner .baners .big-one .vimeo-video-box {
 
 section.rixos-elite-banner .baners .big-one .vimeo-video-box .vimeo-player {
 	opacity: 0;
-	transition: all 1s ease;
+	transition: opacity 1s ease;
 }
 
 section.rixos-elite-banner .baners .big-one .vimeo-video-box .vimeo-player.playback {
 	opacity: 1;
-	transition: all 1s ease;
 }
 
 section.rixos-elite-banner .baners .big-one .vimeo-video-box iframe {
 	position: absolute;
-	width: 100%;
+	width: 170%;
 	height: 100%;
-	top: 0;
-	left: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 section.rixos-elite-banner .baners .big-one .vimeo-video-box .vimeo-player {
@@ -168,13 +204,3 @@ section.rixos-elite-banner>article .contenu .baners .small-one .icon img {
 	}
 }
 
-@media (min-width: 769px) {
-	section.rixos-elite-banner .baners .big-one .vimeo-video-box iframe {
-		position: absolute;
-		width: 120%;
-		height: 110%;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-}

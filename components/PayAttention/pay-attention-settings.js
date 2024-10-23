@@ -6,7 +6,7 @@ window.pay_attention_slider = [
 			title: 'Узнать больше',
 			go_to: '#'
 		},
-		bacground_img: './img/pay-attention-1.jpg',
+		bacground_img: 'https://b2ccdn.coral.ru/content/landing-pages/home/pay-attention-1.webp',
 	},
 	{
 		headline: 'Ваш помощник по туру',
@@ -15,7 +15,7 @@ window.pay_attention_slider = [
 			title: 'Узнать больше',
 			go_to: '#'
 		},
-		bacground_img: './img/pay-attention-2.jpg',
+		bacground_img: 'https://b2ccdn.coral.ru/content/landing-pages/home/pay-attention-2.webp',
 	},
 	{
 		headline: 'Отдых на виллах',
@@ -24,7 +24,7 @@ window.pay_attention_slider = [
 			title: 'Узнать больше',
 			go_to: '#'
 		},
-		bacground_img: './img/pay-attention-3.jpg',
+		bacground_img: 'https://b2ccdn.coral.ru/content/landing-pages/home/pay-attention-3.webp',
 		CSS: {
 			text_color: '#fff'
 		}
@@ -36,7 +36,7 @@ window.pay_attention_slider = [
 			title: 'Найти тур',
 			go_to: '#'
 		},
-		bacground_img: './img/pay-attention-4.jpg',
+		bacground_img: 'https://b2ccdn.coral.ru/content/landing-pages/home/pay-attention-4.webp',
 		CSS: {
 			text_color: '#fff'
 		}

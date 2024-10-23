@@ -24,7 +24,7 @@ function brandsSliderInit() {
 	const background_slider_markup = window.our_brand_slider
 		.map(el => {
 			return `<swiper-slide>
-					<div role="img" area-label="${el.SEO.alt}" style="background-image: url(${el.brand_background_desktop});"></div>
+					<div role="img" aria-label="${el.SEO.alt}" style="background-image: url(${el.brand_background_desktop});"></div>
 				</swiper-slide>`;
 		}).join("");
 
