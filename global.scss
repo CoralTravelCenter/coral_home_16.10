@@ -111,11 +111,11 @@ section.coral-custom-section {
 
 .coral-main-btn.white {
 	background: #fff;
-	color: #000;
+	color: #000 !important;
 	border: 1px solid #fff;
 
 	&:hover {
-		color: #66d1ff;
+		color: #66d1ff !important;
   	border-color: #66d1ff;
 	}
 }
@@ -156,7 +156,9 @@ swiper-container {
 
 	&::part(pagination) {
 		position: relative;
-		margin-top: 16px;
+	  margin-top: 16px;
+	  bottom: unset;
+	  top: unset;
 	}
 
 	&::part(bullet) {
@@ -210,18 +212,22 @@ swiper-container {
 	}
 }
 
-.tippy-box {
-	background-color: #fff;
-}
 
-.tippy-arrow {
-	color: #fff;
-}
+
+.tippy-tooltip {
+	background-color: #fff;
+	border-radius: 8px;
+	> .tippy-arrow {
+		border-bottom-color: #fff !important;
+		left: 250px !important;
+	}}
 
 [data-copy-code] {
 	width: 30px;
 	height: 30px;
 	background: transparent;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
 	border: none;
 	padding: 0;
 	cursor: pointer;

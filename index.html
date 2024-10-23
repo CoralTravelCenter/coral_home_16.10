@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="./components/Bronirovanie/bronirovanie.scss"/>
 		<link rel="stylesheet" href="./components/Bonus/bonus-banner.scss"/>
 		<link rel="stylesheet" href="./components/PayAttention/pay-attention.scss"/>
+		<link rel="stylesheet" href="./components/HotelsWeek/hotels-week.scss"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<title>Coral-Home</title>
 	</head>
@@ -41,7 +42,7 @@
 			<section class="coral-custom-section rixos-elite-banner">
 				<div class="coral-custom-section-wrapper">
 					<div class="baners">
-						<a class="big-one" href="https://www.coral.ru/chain/rixos/egypt/?erid=LjN8KGmvT" target="_blank" rel="noopener noreferrer">
+						<a class="big-one" href="https://www.coral.ru/chain/rixos/egypt/?erid=LjN8KGmvT" target="_blank" rel="noopener noreferrer" role="img" aria-label="">
 							<div class="vimeo-video-box rixos-elite">
 								<div class="vimeo-player playback" data-vimeo-vid="1012748690">
 								</div>
@@ -50,7 +51,7 @@
 								<br>
 							</div>
 						</a>
-						<div class="small-one">
+						<div class="small-one" role="img" aria-label="">
 							<div class="logo-text">
 								<div class="icon">
 									<img src="https://b2ccdn.coral.ru/content/home/elite_icon_gif.gif">
@@ -76,7 +77,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="coral-custom-section bronirovanie">
+			<section class="coral-custom-section bronirovanie" role="img" aria-label="">
 				<div class="coral-custom-section-wrapper">
 					<h3>Бронируйте отели<br> на сайте coral.ru</h3>
 					<span>Это проще, чем вы думаете!</span>
@@ -106,7 +107,7 @@
 			<section class="coral-custom-section bonus-banner">
 				<div class="coral-custom-section-wrapper">
 					<div class="baners">
-						<div class="big-one">
+						<div class="big-one" role="img" aria-label="">
 							<h3>СоralBonus</h3>
 							<p>
 								Отдыхайте, получайте бонусы<br>
@@ -116,7 +117,7 @@
 							<a class="coral-main-btn white" href="#" target="_blank">Узнать больше</a>
 							<span class="erid">Реклама. ООО «ТО КОРАЛ ТРЕВЕЛ ЦЕНТР»</span>
 						</div>
-						<div class="small-one">
+						<div class="small-one" role="img" aria-label="">
 							<h3>Дарите<br> впечатления самым любимым</h3>
 							<p>Подарочные карты
 								и сертификаты Сoral Travel</p>
@@ -124,6 +125,15 @@
 							<span class="erid">Реклама. ООО «ТО КОРАЛ ТРЕВЕЛ ЦЕНТР»</span>
 						</div>
 					</div>
+				</div>
+			</section>
+			<section class="coral-custom-section hotels-week">
+				<div class="coral-custom-section-wrapper">
+					<swiper-container
+						data-hotels-week-slider
+						init=false
+					>
+					</swiper-container>
 				</div>
 			</section>
 			<section class="coral-custom-section pay-attention">
@@ -140,6 +150,7 @@
 		<script src="https://b2ccdn.coral.ru/content/scripts/poppermin.js"></script>
 		<script src="https://unpkg.com/popper.js@1"></script>
 		<script src="https://unpkg.com/tippy.js@5"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 		<script src="./components/NarrowSlider/narrow-settings.js"></script>
 		<script
 			type="module"
@@ -156,6 +167,8 @@
 		></script>
 		<script src="./components/PayAttention/pay-attention-settings.js"></script>
 		<script type="module" src="./components/PayAttention/pay-attention.js"></script>
+		<script src="./components/HotelsWeek/hotels-week-settings.js"></script>
+		<script type="module" src="./components/HotelsWeek/hotels-week.js"></script>
 	</body>
 </html>
 

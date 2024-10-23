@@ -25,6 +25,9 @@ window.pay_attention_slider = [
 			go_to: '#'
 		},
 		bacground_img: './img/pay-attention-3.jpg',
+		CSS: {
+			text_color: '#fff'
+		}
 	},
 	{
 		headline: 'Умный подбор туров',
@@ -34,5 +37,8 @@ window.pay_attention_slider = [
 			go_to: '#'
 		},
 		bacground_img: './img/pay-attention-4.jpg',
-	}
+		CSS: {
+			text_color: '#fff'
+		}
+	},
 ]

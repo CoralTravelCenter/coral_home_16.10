@@ -80,18 +80,14 @@ section.brand-slider {
 
 		swiper-slide {
 			height: 430px;
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: cover;
+			> div {
+				height: 100%;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+			}
 		}
 	}
 }
 
-section.brand-slider swiper-container swiper-slide[black-content] {
-	.content {
-		h3,span.advister {
-			color: #000;
-		}
-	}
-}
 
