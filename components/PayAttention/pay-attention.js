@@ -9,8 +9,8 @@ function payAttentionInit() {
 			return `
 				<swiper-slide style="background-image: url(${el.bacground_img});">
 					<div class="content-wrapper">
-						<h3 style="${(el.CSS) ? `color: ${el.CSS.text_color}` : ''}">${el.headline}</h3>
-						<p style="${(el.CSS) ? `color: ${el.CSS.text_color}` : ''}">${el.text}</p>
+						<h3 style="${(el.CSS) ? `color: ${el.CSS.color}` : ''}">${el.headline}</h3>
+						<p style="${(el.CSS) ? `color: ${el.CSS.color}` : ''}">${el.text}</p>
 						<a class="coral-main-btn white" href="${el.action.go_to}">${el.action.title}</a>
 					</div>
 				</swiper-slide>

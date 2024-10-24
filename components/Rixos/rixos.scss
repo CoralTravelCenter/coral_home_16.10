@@ -28,10 +28,12 @@ section.rixos-elite-banner .baners .big-one .content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: end;
 	padding: 16px;
 	gap: 24px;
 	height: 100%;
+	position: relative;
+  z-index: 4;
 
 	.content-logo {
 		max-width: 230px;

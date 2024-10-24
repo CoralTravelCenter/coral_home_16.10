@@ -17,8 +17,9 @@ function hotelsWeekInit() {
 		.map((el) => {
 			return `
 				<swiper-slide>
-					<div class="visual" role="img" aria-label="${el.SEO.alt}" style="background-image: url(${el.img});"></div>
+					<div class="visual" role="img" aria-label="${el.SEO.alt}" style="background-image: url('${el.img}');"></div>
 					<div class="content">
+					<div>
 						<div class="location">
 							<span>
 										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,10 +47,12 @@ function hotelsWeekInit() {
 							data-onlyhotel-lookup-depth-days="${el.depth_days}"
 							>Выбрать тур</a>
 						</div>
+						
 							${(el.erid === ''
 					? '<button style="display: none;" class="tooltip-toggler" id="narrow-tooltip-toggler">Реклама</button>'
 					: '<button style="display: flex;" class="tooltip-toggler" id="narrow-tooltip-toggler">Реклама</button>'
 			)}
+			</div>
 				</swiper-slide>
 			`;
 		})

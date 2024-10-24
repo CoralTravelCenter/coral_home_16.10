@@ -1,3 +1,8 @@
+.layout-container-limit:has(section.hotels-week) {
+    padding: 0 !important;
+    max-width: unset !important;
+}
+
 section.hotels-week {
 	swiper-container {
 		swiper-slide {
@@ -20,53 +25,59 @@ section.hotels-week {
 				z-index: 1;
 			}
 			.content {
-				width: 45%;
-				position: relative;
-				z-index: 2;
-				background: #fff;
-				border-radius: 12px;
 				display: flex;
-				flex-direction: column;
+				width: 100%;
 				justify-content: space-between;
 				align-items: start;
-				gap: 16px;
-				padding: 40px;
-				min-height: 424px;
-
-				.location {
-					display: flex;
-					width: 100%;
-					justify-content: space-between;
-					gap: 16px;
-
-					span {
-						display: inline-flex;
-						flex-shrink: 0;
-						align-items: center;
-						gap: 4px;
-						color: var(--colorTextSecondary, rgba(0, 0, 0, 0.65));
-						font-size: 12px;
-						font-style: normal;
-						line-height: 1.3;
-					}
-
-					.logo {
-						max-height: 30px;
-						max-width: 120px;
-						display: flex;
-						justify-content: end;
-
-						> img {
-							object-fit: contain;
-							width: auto;
-						}
-					}
-				}
-
-				.text-and-action {
+				> div {
+					width: 45%;
+					position: relative;
+					z-index: 2;
+					background: #fff;
+					border-radius: 12px;
 					display: flex;
 					flex-direction: column;
-					gap: 20px;
+					justify-content: space-between;
+					align-items: start;
+					gap: 16px;
+					padding: 40px;
+					min-height: 424px;
+
+					.location {
+						display: flex;
+						width: 100%;
+						justify-content: space-between;
+						gap: 16px;
+
+						span {
+							display: inline-flex;
+							flex-shrink: 0;
+							align-items: center;
+							gap: 4px;
+							color: var(--colorTextSecondary, rgba(0, 0, 0, 0.65));
+							font-size: 12px;
+							font-style: normal;
+							line-height: 1.3;
+						}
+
+						.logo {
+							max-height: 30px;
+							max-width: 120px;
+							display: flex;
+							justify-content: end;
+
+							> img {
+								object-fit: contain;
+								width: auto;
+							}
+						}
+					}
+
+					.text-and-action {
+						display: flex;
+						flex-direction: column;
+						gap: 20px;
+					}
 				}
 			}
 		}

@@ -1,13 +1,15 @@
 function goUpSearch() {
 	const action = document.querySelector('[data-go-up-search]');
 	const body = document.body;
+	const hotelTab = document.querySelectorAll('[data-testid="quickSearchBarBlock"] .ant-tabs-nav-list .ant-tabs-tab')[1]
 	action.addEventListener('click', () => {
 		window.scrollTo(0, 0)
-		document.body.classList.add('js-backdrop');
+		body.classList.add('js-backdrop');
+		hotelTab.click();
 	})
-	document.body.addEventListener('click', (e) => {
+	body.addEventListener('click', (e) => {
 		if (e.target === body) {
-			document.body.classList.remove('js-backdrop');
+			body.classList.remove('js-backdrop');
 		}
 	})
 }

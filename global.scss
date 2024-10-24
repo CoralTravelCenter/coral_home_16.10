@@ -8,13 +8,12 @@
 
 :root {
 	--section-width: 1530px;
-	--container-width: 1370px;
-	--container-widthout-slider: 1244px;
-	--container-padding-block: 20px;
-	--container-padding-inline: 16px;
-	--transtion: 300ms ease;
-	--tablet: 990px;
-	--mobile: 768px;
+  --container-width: calc(1370px - (16px * 2));
+  --container-padding-block: 20px;
+  --container-padding-inline: 8px;
+  --transtion: 300ms ease;
+  --tablet: 990px;
+  --mobile: 768px;
 }
 
 *, *:after, *:before {
@@ -26,11 +25,19 @@ body {
 	margin: 0;
 }
 
+.row-outer-container .ant-col > div > div:empty {
+	height: 0;
+}
+
+.row-outer-container .ant-col > div > div:has(style, script) {
+	height: 0;
+}
+
 section.coral-custom-section {
-	background: lightpink;
 	max-width: var(--section-width);
 	margin: 0 auto;
 	padding: var(--container-padding-block) var(--container-padding-inline);
+	position: relative;
 
 	.coral-custom-section__headline {
 		width: 100%;
@@ -49,9 +56,8 @@ section.coral-custom-section {
 	.coral-custom-section-wrapper {
 		max-width: var(--container-width);
 		margin: 0 auto;
-		position: relative;
 		display: flex;
-		gap: 32px;
+		gap: 24px;
 		align-items: center;
 		padding: 0;
 	}
@@ -91,7 +97,6 @@ section.coral-custom-section {
 	font-weight: 600;
 	line-height: 1.3;
 	padding: 13px 24px;
-	text-decoration: none;
 	flex-shrink: 0;
 	transition: all var(--transtion);
 	border: 1px solid #0093d0;
@@ -133,7 +138,9 @@ section.coral-custom-section {
 	align-items: center;
 	justify-content: center;
 	transition: border-color var(--transtion);;
-	position: relative;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 	z-index: 3;
 
 	svg path {
@@ -149,9 +156,17 @@ section.coral-custom-section {
 	}
 }
 
+.custom-slider-nav-btn.slider-bnt-prev {
+	left: -64px;
+}
+
+.custom-slider-nav-btn.slider-bnt-next {
+	right: -64px;
+}
+
 swiper-container {
 	--bullet: 10px;
-	width: calc(100% - ((40px + 24px) * 2));
+	width: 100%;
 
 	&::part(pagination) {
 		position: relative;
@@ -174,6 +189,7 @@ swiper-container {
 }
 
 .tooltip-toggler {
+	position: relative;
 	border-radius: 16px;
 	background: rgba(255, 255, 255, 0.50);
 	backdrop-filter: blur(2px);
@@ -186,9 +202,21 @@ swiper-container {
 	font-weight: 400;
 	line-height: 1;
 	border: none;
+	z-index: 3;
 }
 
-.tippy-content {
+section.coral-custom-section [data-tippy-root] {
+	min-height: 30px !important;
+	padding: 0 !important;
+	width: auto !important;
+	background: transparent !important;
+}
+
+section.coral-custom-section .tippy-box {
+	background: transparent;
+}
+
+section.coral-custom-section .tippy-content {
 	background-color: rgb(255, 255, 255);
   color: rgba(0, 0, 0, 0.85);
   min-height: 30px;
@@ -212,8 +240,7 @@ swiper-container {
 }
 
 
-
-.tippy-tooltip {
+section.coral-custom-section .tippy-tooltip {
 	background-color: #fff;
 	border-radius: 8px;
 	> .tippy-arrow {
@@ -225,8 +252,7 @@ swiper-container {
 	width: 30px;
 	height: 30px;
 	background: transparent;
-	border-top-right-radius: 8px;
-	border-bottom-right-radius: 8px;
+	border-radius: 8px;
 	border: none;
 	padding: 0;
 	cursor: pointer;
@@ -237,6 +263,6 @@ swiper-container {
 	}
 }
 
-[data-tippy-root] {
+section.coral-custom-section [data-tippy-root] {
 	inset: 0;
 }
