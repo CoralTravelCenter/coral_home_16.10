@@ -1,4 +1,4 @@
-import {insertOnseHtml, renderTooltipMarkup, sliderParams} from "../../utils";
+import {insertOnseHtml, sliderParams, Tooltip} from "../../utils";
 import {generateNextButton, generatePrevButton} from "../SliderNavBtn/slider-nav-btn.js";
 
 function narrowInit() {
@@ -43,8 +43,11 @@ function narrowInit() {
 	Object.assign(narrow_slider, slider_settings);
 	narrow_slider.initialize();
 
-	[...document.querySelectorAll('#narrow-tooltip-toggler')]
-		.forEach((el, idx) => renderTooltipMarkup(el, idx, SETTINGS));
+	[...document.querySelectorAll('section.narrow-slider #narrow-tooltip-toggler')]
+		.forEach((el, idx) => new Tooltip(el, {
+			erid: SETTINGS[idx].erid,
+			vendor: 'coral'
+		}));
 }
 
 if (!window.location.origin.includes('backoffice')) narrowInit()

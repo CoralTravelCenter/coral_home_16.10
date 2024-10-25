@@ -73,8 +73,11 @@ function hotelsWeekInit() {
 	Object.assign(target_el, slider_settings);
 	target_el.initialize();
 
-	[...target_el.querySelectorAll('#narrow-tooltip-toggler')]
-		.forEach((el, idx) => renderTooltipMarkup(el, idx, SETTINGS));
+	[...document.querySelectorAll('section.hotels-week #narrow-tooltip-toggler')]
+		.forEach((el, idx) => new Tooltip(el, {
+			erid: SETTINGS[idx].erid,
+			vendor: 'coral'
+		}));
 }
 
 if (!window.location.origin.includes('backoffice')) hotelsWeekInit()

@@ -23,8 +23,16 @@ function payAttentionInit() {
 	insertOnseHtml("beforebegin", generatePrevButton(), pay_attention_slider);
 
 	const slider_settings = sliderParams('section.pay-attention');
-	slider_settings.slidesPerView = 4
+	slider_settings.slidesPerView = 2
 	slider_settings.spaceBetween = 24
+	slider_settings.breakpoints = {
+		1024: {
+			slidesPerView: 3
+		},
+		1240: {
+			slidesPerView: 4
+		}
+	}
 
 
 	if (pay_attention_slider.childElementCount <= 4) {
