@@ -22,7 +22,9 @@ function sliderParams(selector) {
 			prevEl: `${selector} .slider-bnt-prev`,
 			nextEl: `${selector} .slider-bnt-next`
 		},
-		pagination: true
+		pagination: {
+			clickable: 'true'
+		}
 	}
 }
 

@@ -41,10 +41,7 @@ function hotelsWeekInit() {
 						</h3>
 						<p>${el.paragraph}</p>
 						</div>
-						<a href="#" class="coral-main-btn"
-							data-onlyhotel-lookup-destination="${el.location.split(' ')[0]}"
-							data-onlyhotel-lookup-regions="${el.title}"
-							data-onlyhotel-lookup-depth-days="${el.depth_days}"
+						<a href="${el.button_link}" class="coral-main-btn"
 							>Выбрать тур</a>
 						</div>
 						

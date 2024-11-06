@@ -8,6 +8,9 @@ window.narrow_slider = [
 		img: "https://b2ccdn.coral.ru/content/img/1096x420_green_planet.jpg",
 		SEO: {
 			alt: 'Заполняется SEO командой'
+		},
+		CSS: {
+			background_position: 'right center'
 		}
 	},
 	{
@@ -21,6 +24,9 @@ window.narrow_slider = [
 		img: "https://b2ccdn.coral.ru/content/img/1096x420_RMW.jpg",
 		SEO: {
 			alt: 'Заполняется SEO командой'
+		},
+		CSS: {
+			background_position: 'center center'
 		}
 	},
 	{
@@ -33,6 +39,9 @@ window.narrow_slider = [
 		img: "https://b2ccdn.coral.ru/content/home/loan_image.webp",
 		SEO: {
 			alt: 'Заполняется SEO командой'
+		},
+		CSS: {
+			background_position: 'center center'
 		}
 	},
 	{
@@ -45,6 +54,9 @@ window.narrow_slider = [
 		img: "https://b2ccdn.coral.ru/content/home/mice_image.webp",
 		SEO: {
 			alt: 'Заполняется SEO командой'
+		},
+		CSS: {
+			background_position: 'center center'
 		}
 	},
 	{
@@ -56,6 +68,9 @@ window.narrow_slider = [
 		img: "https://b2ccdn.coral.ru/content/home/giftcard_image.jpg",
 		SEO: {
 			alt: 'Заполняется SEO командой'
+		},
+		CSS: {
+			background_position: 'center center'
 		}
 	},
 	{
@@ -68,6 +83,9 @@ window.narrow_slider = [
 		img: "https://b2ccdn.coral.ru/content/home/online_order.jpg",
 		SEO: {
 			alt: 'Заполняется SEO командой'
+		},
+		CSS: {
+			background_position: 'center center'
 		}
 	},
 	{
@@ -79,6 +97,9 @@ window.narrow_slider = [
 		img: "https://b2ccdn.coral.ru/content/home/services_image.jpg",
 		SEO: {
 			alt: 'Заполняется SEO командой'
+		},
+		CSS: {
+			background_position: 'center center'
 		}
 	},
 ];

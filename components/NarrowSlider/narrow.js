@@ -15,8 +15,7 @@ function narrowInit() {
 							${(el.paragraph) ? `<p>${el.paragraph}</p>` : ''}
 							<a class='coral-main-btn' href=${el.button_link} target="_blank">${el.button_text}</a>
 						</div>
-						<div class="visual">
-							<img src=${el.img} alt="${el.SEO.alt}">
+						<div class="visual" role="img" aria-label="${el.SEO.alt}" style="background-image: url('${el.img}'); background-position: ${el.CSS.background_position};">
 							${(el.erid === ''
 					? '<button style="display: none;" class="tooltip-toggler" id="narrow-tooltip-toggler">Реклама</button>'
 					: '<button style="display: flex;" class="tooltip-toggler" id="narrow-tooltip-toggler">Реклама</button>'
