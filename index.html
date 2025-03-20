@@ -1,194 +1,202 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8"/>
-		<link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css"/>
-		<link rel="stylesheet" href="./global.scss"/>
-		<link rel="stylesheet" href="./components/NarrowSlider/narrow.scss"/>
-		<link rel="stylesheet" href="./components/OurHotels/our-hotels.scss"/>
-		<link rel="stylesheet" href="./components/Rixos/rixos.scss"/>
-		<link rel="stylesheet" href="./components/Bronirovanie/bronirovanie.scss"/>
-		<link rel="stylesheet" href="./components/Bonus/bonus-banner.scss"/>
-		<link rel="stylesheet" href="./components/PayAttention/pay-attention.scss"/>
-		<link rel="stylesheet" href="./components/HotelsWeek/hotels-week.scss"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>Coral-Home</title>
-	</head>
-	<body>
-		<div id="app">
-			<section class="coral-custom-section narrow-slider">
-				<div class="coral-custom-section-wrapper">
-					<swiper-container
-						data-narrow-slider
-						init=false
-					>
-					</swiper-container>
-				</div>
-			</section>
-			<section class="coral-custom-section brand-slider">
-				<div class="coral-custom-section-wrapper">
-					<swiper-container
-						data-brand-slider
-						init=false
-					>
-					</swiper-container>
-				</div>
-				<swiper-container
-					data-brand-bg-slider
-					init=false
-				>
-				</swiper-container>
-			</section>
-			<section class="coral-custom-section rixos-elite-banner">
-				<div class="coral-custom-section-wrapper">
-					<div class="baners">
-						<div
-							class="big-one"
-							role="img"
-							aria-label=""
-						>
-							<div class="content">
-								<img
-									class="content-logo"
-									src="https://b2ccdn.coral.ru/content/landing-pages/home/rixos-svg.svg"
-								/>
-								<img
-									class="content-title"
-									src="https://b2ccdn.coral.ru/content/landing-pages/home/rixos-title.svg"
-								/>
-								<span class="content-slogan">Все включено - Все эксклюзивно</span>
-								<a href="https://www.coral.ru/chain/rixos/egypt/?erid=LjN8KGmvT" class="coral-main-btn">Узнать больше</a>
-								<span class="advister">Реклама. ООО «ТО КОРАЛ ТРЕВЕЛ ЦЕНТР»</span>
-							</div>
-							<div class="vimeo-video-box rixos-elite">
-								<div class="vimeo-player playback" data-vimeo-vid="1022499631">
-								</div>
-								<div class="vimeo-player mobile" data-vimeo-vid="1010580226">
-								</div>
-								<br>
-							</div>
-						</div>
-						<div class="small-one" role="img" aria-label="">
-							<div class="logo-text">
-								<div class="icon">
-									<img
-										src="https://b2ccdn.coral.ru/content/home/elite_icon_gif.gif"
-									/>
-								</div>
-								<h3>
-									Концепция<br/>
-									Elite Service
-								</h3>
-							</div>
-							<p>
-								Премиальный отдых<br/>
-								продуманный до мелочей
-							</p>
-							<a
-								class="coral-main-btn"
-								href="https://www.coral.ru/concepts/elite-service/"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Узнать больше
-							</a>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="coral-custom-section bronirovanie" role="img" aria-label="">
-				<div class="coral-custom-section-wrapper">
-					<h3>Бронируйте отели<br> на сайте coral.ru</h3>
-					<span>Это проще, чем вы думаете!</span>
-					<ul>
-						<li>
-							<strong>
-								ШАГ 1.
-							</strong>
-							<button data-go-up-search>Выбираем направление,</button> даты и количество туристов
-						</li>
-						<li>
-							<strong>
-								ШАГ 2.
-							</strong>
-							Находим понравившийся отель и тип номера
-						</li>
-						<li>
-							<strong>
-								ШАГ 3.
-							</strong>
-							Заполняем данные, ждем подтверждения и оплачиваем
-						</li>
-					</ul>
-					<a class="coral-main-btn" href="#">Узнать больше</a>
-				</div>
-			</section>
-			<section class="coral-custom-section bonus-banner">
-				<div class="coral-custom-section-wrapper">
-					<div class="baners">
-						<div class="big-one" role="img" aria-label="">
-							<h3>СоralBonus</h3>
-							<p>
-								Отдыхайте, получайте бонусы<br>
-								и оплачивайте до 100% следующего<br>
-								путешествия бонусами
-							</p>
-							<a class="coral-main-btn white" href="#" target="_blank">Узнать больше</a>
-							<span class="erid">Реклама. ООО «ТО КОРАЛ ТРЕВЕЛ ЦЕНТР»</span>
-						</div>
-						<div class="small-one" role="img" aria-label="">
-							<h3>Дарите<br> впечатления самым любимым</h3>
-							<p>Подарочные карты
-								и сертификаты Сoral Travel</p>
-							<a class="coral-main-btn white" href="#" target="_blank">Узнать больше</a>
-							<span class="erid">Реклама. ООО «ТО КОРАЛ ТРЕВЕЛ ЦЕНТР»</span>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="coral-custom-section hotels-week">
-				<div class="coral-custom-section-wrapper">
-					<swiper-container
-						data-hotels-week-slider
-						init=false
-					>
-					</swiper-container>
-				</div>
-			</section>
-			<section class="coral-custom-section pay-attention">
-				<div class="coral-custom-section__headline"><h2>Обратите внимание</h2></div>
-				<div class="coral-custom-section-wrapper">
-					<swiper-container
-						data-pay-attention-slider
-						init=false
-					>
-					</swiper-container>
-				</div>
-			</section>
-		</div>
-		<script src="https://b2ccdn.coral.ru/content/scripts/poppermin.js"></script>
-		<script src="https://unpkg.com/popper.js@1"></script>
-		<script src="https://unpkg.com/tippy.js@5"></script>
-		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-		<script src="./components/NarrowSlider/narrow-settings.js"></script>
-		<script
-			type="module"
-			src="./components/NarrowSlider/narrow.js"
-		></script>
-		<script src="./components/OurHotels/our-hotels-settings.js"></script>
-		<script
-			type="module"
-			src="./components/OurHotels/our-hotels-slider.js"
-		></script>
-		<script
-			type="module"
-			src="./components/Rixos/rixos.js"
-		></script>
-		<script src="./components/PayAttention/pay-attention-settings.js"></script>
-		<script type="module" src="./components/PayAttention/pay-attention.js"></script>
-		<!--<script src="./components/HotelsWeek/hotels-week-settings.js"></script>-->
-		<!--<script type="module" src="./components/HotelsWeek/hotels-week.js"></script>-->
-	</body>
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://unpkg.com/microtip/microtip.css"/>
+    <link rel="stylesheet" href="./global.scss"/>
+    <link rel="stylesheet" href="./components/NarrowSlider/narrow.scss"/>
+    <link rel="stylesheet" href="./components/OurHotels/our-hotels.scss"/>
+    <link rel="stylesheet" href="./components/Rixos/rixos.scss"/>
+    <link rel="stylesheet" href="./components/Bronirovanie/bronirovanie.scss"/>
+    <link rel="stylesheet" href="./components/Bonus/bonus-banner.scss"/>
+    <link rel="stylesheet" href="./components/PayAttention/pay-attention.scss"/>
+    <link rel="stylesheet" href="./components/HotelsWeek/hotels-week.scss"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Coral-Home</title>
+</head>
+<body>
+<div id="app">
+    <section class="coral-custom-section narrow-slider">
+        <div class="coral-custom-section-wrapper">
+            <button class="custom-slider-nav-btn slider-bnt-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="5" height="9" viewBox="0 0 5 9" fill="none">
+                    <path d="M4.58325 1.16504L1.24992 4.49837L4.58325 7.83171" stroke="#535353"
+                          stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <swiper-container
+                    data-narrow-slider
+                    init="false"
+            >
+            </swiper-container>
+            <button class="custom-slider-nav-btn slider-bnt-next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 6 9" fill="none">
+                    <path d="M1.25 1.16504L4.58333 4.49837L1.25 7.83171" stroke="#535353" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+    <section class="coral-custom-section brand-slider">
+        <div class="coral-custom-section-wrapper">
+            <swiper-container
+                    data-brand-slider
+                    init=false
+            >
+            </swiper-container>
+        </div>
+        <swiper-container
+                data-brand-bg-slider
+                init=false
+        >
+        </swiper-container>
+    </section>
+    <section class="coral-custom-section rixos-elite-banner">
+        <div class="coral-custom-section-wrapper">
+            <div class="baners">
+                <div
+                        class="big-one"
+                        role="img"
+                        aria-label=""
+                >
+                    <div class="content">
+                        <img
+                                class="content-logo"
+                                src="https://b2ccdn.coral.ru/content/landing-pages/home/rixos-svg.svg"
+                        />
+                        <img
+                                class="content-title"
+                                src="https://b2ccdn.coral.ru/content/landing-pages/home/rixos-title.svg"
+                        />
+                        <span class="content-slogan">Все включено - Все эксклюзивно</span>
+                        <a href="https://www.coral.ru/chain/rixos/egypt/?erid=LjN8KGmvT" class="coral-main-btn">Узнать
+                            больше</a>
+                        <span class="advister">Реклама. ООО «ТО КОРАЛ ТРЕВЕЛ ЦЕНТР»</span>
+                    </div>
+                    <div class="vimeo-video-box rixos-elite">
+                        <div class="vimeo-player playback" data-vimeo-vid="1022499631">
+                        </div>
+                        <div class="vimeo-player mobile" data-vimeo-vid="1010580226">
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <div class="small-one" role="img" aria-label="">
+                    <div class="logo-text">
+                        <div class="icon">
+                            <img
+                                    src="https://b2ccdn.coral.ru/content/home/elite_icon_gif.gif"
+                            />
+                        </div>
+                        <h3>
+                            Концепция<br/>
+                            Elite Service
+                        </h3>
+                    </div>
+                    <p>
+                        Премиальный отдых<br/>
+                        продуманный до мелочей
+                    </p>
+                    <a
+                            class="coral-main-btn"
+                            href="https://www.coral.ru/concepts/elite-service/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                    >
+                        Узнать больше
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="coral-custom-section bronirovanie" role="img" aria-label="">
+        <div class="coral-custom-section-wrapper">
+            <h3>Бронируйте отели<br> на сайте coral.ru</h3>
+            <span>Это проще, чем вы думаете!</span>
+            <ul>
+                <li>
+                    <strong>
+                        ШАГ 1.
+                    </strong>
+                    <button data-go-up-search>Выбираем направление,</button>
+                    даты и количество туристов
+                </li>
+                <li>
+                    <strong>
+                        ШАГ 2.
+                    </strong>
+                    Находим понравившийся отель и тип номера
+                </li>
+                <li>
+                    <strong>
+                        ШАГ 3.
+                    </strong>
+                    Заполняем данные, ждем подтверждения и оплачиваем
+                </li>
+            </ul>
+            <a class="coral-main-btn" href="#">Узнать больше</a>
+        </div>
+    </section>
+    <section class="coral-custom-section bonus-banner">
+        <div class="coral-custom-section-wrapper">
+            <div class="baners">
+                <div class="big-one" role="img" aria-label="">
+                    <h3>СоralBonus</h3>
+                    <p>
+                        Отдыхайте, получайте бонусы<br>
+                        и оплачивайте до 100% следующего<br>
+                        путешествия бонусами
+                    </p>
+                    <a class="coral-main-btn white" href="#" target="_blank">Узнать больше</a>
+                    <span class="erid">Реклама. ООО «ТО КОРАЛ ТРЕВЕЛ ЦЕНТР»</span>
+                </div>
+                <div class="small-one" role="img" aria-label="">
+                    <h3>Дарите<br> впечатления самым любимым</h3>
+                    <p>Подарочные карты
+                        и сертификаты Сoral Travel</p>
+                    <a class="coral-main-btn white" href="#" target="_blank">Узнать больше</a>
+                    <span class="erid">Реклама. ООО «ТО КОРАЛ ТРЕВЕЛ ЦЕНТР»</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="coral-custom-section hotels-week">
+        <div class="coral-custom-section-wrapper">
+            <swiper-container
+                    data-hotels-week-slider
+                    init=false
+            >
+            </swiper-container>
+        </div>
+    </section>
+    <section class="coral-custom-section pay-attention">
+        <div class="coral-custom-section__headline"><h2>Обратите внимание</h2></div>
+        <div class="coral-custom-section-wrapper">
+            <swiper-container
+                    data-pay-attention-slider
+                    init=false
+            >
+            </swiper-container>
+        </div>
+    </section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script src="./components/NarrowSlider/narrow-settings.js"></script>
+<script
+        type="module"
+        src="./components/NarrowSlider/narrow.js"
+></script>
+<script src="./components/OurHotels/our-hotels-settings.js"></script>
+<script
+        type="module"
+        src="./components/OurHotels/our-hotels-slider.js"
+></script>
+<script
+        type="module"
+        src="./components/Rixos/rixos.js"
+></script>
+<script src="./components/PayAttention/pay-attention-settings.js"></script>
+<script type="module" src="./components/PayAttention/pay-attention.js"></script>
+<!--<script src="./components/HotelsWeek/hotels-week-settings.js"></script>-->
+<!--<script type="module" src="./components/HotelsWeek/hotels-week.js"></script>-->
+</body>
 </html>
-
-

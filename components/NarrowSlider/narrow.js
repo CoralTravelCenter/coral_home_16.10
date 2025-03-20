@@ -1,52 +1,72 @@
-import {insertOnseHtml, sliderParams, Tooltip} from "../../utils";
-import {generateNextButton, generatePrevButton} from "../SliderNavBtn/slider-nav-btn.js";
+import {cleanText, sliderParams} from "../../utils";
 
 function narrowInit() {
-	const SETTINGS = window.narrow_slider;
-	const narrow_slider = document.querySelector("[data-narrow-slider]");
+  const SETTINGS = window.narrow_slider;
+  const narrow_slider = document.querySelector("[data-narrow-slider]");
+  const fragment = document.createDocumentFragment();
 
-	const markup = SETTINGS
-		.map((el) => {
-			return `
-				<swiper-slide>
-					<div class="content">
-						<div class="text-content">
-							<h3>${el.title}</h3>
-							${(el.paragraph) ? `<p>${el.paragraph}</p>` : ''}
-							<a class='coral-main-btn' href=${el.button_link} target="_blank">${el.button_text}</a>
-						</div>
-						<div class="visual" role="img" aria-label="${el.SEO.alt}" style="background-image: url('${el.img}'); background-position: ${el.CSS.background_position};">
-							${(el.erid === ''
-					? '<button style="display: none;" class="tooltip-toggler" id="narrow-tooltip-toggler">Реклама</button>'
-					: '<button style="display: flex;" class="tooltip-toggler" id="narrow-tooltip-toggler">Реклама</button>'
-			)}
-						</div>
-					</div>
-				</swiper-slide>
-			`;
-		})
-		.join("");
+  function generateMarkup(el) {
+    const swiperSlide = document.createElement('swiper-slide');
+    swiperSlide.setAttribute('lazy', true);
 
-	insertOnseHtml("afterbegin", markup, narrow_slider);
-	insertOnseHtml("afterend", generateNextButton(), narrow_slider);
-	insertOnseHtml("beforebegin", generatePrevButton(), narrow_slider);
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'content';
 
-	const slider_settings = sliderParams('section.narrow-slider');
-	slider_settings.breakpoints = {
-		allowTouchMove: true,
-		769: {
-			allowTouchMove: false
-		}
-	}
+    const textContentDiv = document.createElement('div');
+    textContentDiv.className = 'text-content';
 
-	Object.assign(narrow_slider, slider_settings);
-	narrow_slider.initialize();
+    const title = document.createElement('h3');
+    title.innerHTML = el.title;
+    textContentDiv.appendChild(title);
 
-	[...document.querySelectorAll('section.narrow-slider #narrow-tooltip-toggler')]
-		.forEach((el, idx) => new Tooltip(el, {
-			erid: SETTINGS[idx].erid,
-			vendor: 'coral'
-		}));
+    if (el.paragraph) {
+      const paragraph = document.createElement('p');
+      paragraph.innerHTML = el.paragraph;
+      textContentDiv.appendChild(paragraph);
+    }
+
+    const button = document.createElement('a');
+    button.className = 'coral-main-btn';
+    button.href = el.button_link;
+    button.target = '_blank';
+    button.textContent = el.button_text;
+    textContentDiv.appendChild(button);
+
+    const visualDiv = document.createElement('div');
+    visualDiv.className = 'visual';
+
+    const image = document.createElement('img');
+    image.src = el.img;
+    image.alt = cleanText(el.title);
+    image.loading = 'lazy'
+    visualDiv.appendChild(image);
+
+
+    if (el.legal_entity !== '') {
+      const ligal = document.createElement('span');
+      ligal.classList.add('coral-erid-ligal');
+      ligal.style.color = el.legal_entity.color;
+      ligal.innerHTML = el.legal_entity.text;
+      visualDiv.appendChild(ligal);
+    }
+
+    contentDiv.appendChild(textContentDiv);
+    contentDiv.appendChild(visualDiv);
+    swiperSlide.appendChild(contentDiv);
+    fragment.appendChild(swiperSlide);
+  }
+
+  SETTINGS.forEach(el => generateMarkup(el));
+  narrow_slider.appendChild(fragment);
+
+  const params = sliderParams('section.narrow-slider')
+  params.breakpoints = {
+    769: {
+      allowTouchMove: false
+    }
+  };
+  Object.assign(narrow_slider, params);
+  narrow_slider.initialize()
 }
 
-if (!window.location.origin.includes('backoffice')) narrowInit()
+if (!window.location.origin.includes('backoffice')) narrowInit();
