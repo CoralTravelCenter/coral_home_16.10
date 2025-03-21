@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="https://unpkg.com/microtip/microtip.css"/>
-    <link rel="stylesheet" href="./global.scss"/>
-    <link rel="stylesheet" href="./components/NarrowSlider/narrow.scss"/>
-    <link rel="stylesheet" href="./components/OurHotels/our-hotels.scss"/>
-    <link rel="stylesheet" href="./components/Rixos/rixos.scss"/>
-    <link rel="stylesheet" href="./components/Bronirovanie/bronirovanie.scss"/>
-    <link rel="stylesheet" href="./components/Bonus/bonus-banner.scss"/>
-    <link rel="stylesheet" href="./components/PayAttention/pay-attention.scss"/>
-    <link rel="stylesheet" href="./components/HotelsWeek/hotels-week.scss"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://unpkg.com/microtip/microtip.css" rel="stylesheet"/>
+    <link href="./global.scss" rel="stylesheet"/>
+    <link href="./components/NarrowSlider/narrow.scss" rel="stylesheet"/>
+    <link href="./components/OurHotels/our-hotels.scss" rel="stylesheet"/>
+    <link href="./components/Rixos/rixos.scss" rel="stylesheet"/>
+    <link href="./components/Bronirovanie/bronirovanie.scss" rel="stylesheet"/>
+    <link href="./components/Bonus/bonus-banner.scss" rel="stylesheet"/>
+    <link href="./components/PayAttention/pay-attention.scss" rel="stylesheet"/>
+    <link href="./components/HotelsWeek/hotels-week.scss" rel="stylesheet"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Coral-Home</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
     <section class="coral-custom-section narrow-slider">
         <div class="coral-custom-section-wrapper">
             <button class="custom-slider-nav-btn slider-bnt-prev">
-                <svg xmlns="http://www.w3.org/2000/svg" width="5" height="9" viewBox="0 0 5 9" fill="none">
+                <svg fill="none" height="9" viewBox="0 0 5 9" width="5" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.58325 1.16504L1.24992 4.49837L4.58325 7.83171" stroke="#535353"
                           stroke-linejoin="round"/>
                 </svg>
@@ -30,7 +30,7 @@
             >
             </swiper-container>
             <button class="custom-slider-nav-btn slider-bnt-next">
-                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="9" viewBox="0 0 6 9" fill="none">
+                <svg fill="none" height="9" viewBox="0 0 6 9" width="6" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.25 1.16504L4.58333 4.49837L1.25 7.83171" stroke="#535353" stroke-linejoin="round"/>
                 </svg>
             </button>
@@ -54,9 +54,9 @@
         <div class="coral-custom-section-wrapper">
             <div class="baners">
                 <div
+                        aria-label=""
                         class="big-one"
                         role="img"
-                        aria-label=""
                 >
                     <div class="content">
                         <img
@@ -68,7 +68,7 @@
                                 src="https://b2ccdn.coral.ru/content/landing-pages/home/rixos-title.svg"
                         />
                         <span class="content-slogan">Все включено - Все эксклюзивно</span>
-                        <a href="https://www.coral.ru/chain/rixos/egypt/?erid=LjN8KGmvT" class="coral-main-btn">Узнать
+                        <a class="coral-main-btn" href="https://www.coral.ru/chain/rixos/egypt/?erid=LjN8KGmvT">Узнать
                             больше</a>
                         <span class="advister">Реклама. ООО «ТО КОРАЛ ТРЕВЕЛ ЦЕНТР»</span>
                     </div>
@@ -80,7 +80,7 @@
                         <br>
                     </div>
                 </div>
-                <div class="small-one" role="img" aria-label="">
+                <div aria-label="" class="small-one" role="img">
                     <div class="logo-text">
                         <div class="icon">
                             <img
@@ -99,8 +99,8 @@
                     <a
                             class="coral-main-btn"
                             href="https://www.coral.ru/concepts/elite-service/"
-                            target="_blank"
                             rel="noopener noreferrer"
+                            target="_blank"
                     >
                         Узнать больше
                     </a>
@@ -108,7 +108,7 @@
             </div>
         </div>
     </section>
-    <section class="coral-custom-section bronirovanie" role="img" aria-label="">
+    <section aria-label="" class="coral-custom-section bronirovanie" role="img">
         <div class="coral-custom-section-wrapper">
             <h3>Бронируйте отели<br> на сайте coral.ru</h3>
             <span>Это проще, чем вы думаете!</span>
@@ -139,7 +139,7 @@
     <section class="coral-custom-section bonus-banner">
         <div class="coral-custom-section-wrapper">
             <div class="baners">
-                <div class="big-one" role="img" aria-label="">
+                <div aria-label="" class="big-one" role="img">
                     <h3>СоralBonus</h3>
                     <p>
                         Отдыхайте, получайте бонусы<br>
@@ -149,7 +149,7 @@
                     <a class="coral-main-btn white" href="#" target="_blank">Узнать больше</a>
                     <span class="erid">Реклама. ООО «ТО КОРАЛ ТРЕВЕЛ ЦЕНТР»</span>
                 </div>
-                <div class="small-one" role="img" aria-label="">
+                <div aria-label="" class="small-one" role="img">
                     <h3>Дарите<br> впечатления самым любимым</h3>
                     <p>Подарочные карты
                         и сертификаты Сoral Travel</p>
@@ -179,24 +179,26 @@
         </div>
     </section>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-<script src="./components/NarrowSlider/narrow-settings.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>-->
+<!--<script src="./components/NarrowSlider/narrow-settings.js"></script>-->
 <script
-        type="module"
         src="./components/NarrowSlider/narrow.js"
-></script>
-<script src="./components/OurHotels/our-hotels-settings.js"></script>
-<script
         type="module"
-        src="./components/OurHotels/our-hotels-slider.js"
 ></script>
-<script
-        type="module"
-        src="./components/Rixos/rixos.js"
-></script>
-<script src="./components/PayAttention/pay-attention-settings.js"></script>
-<script type="module" src="./components/PayAttention/pay-attention.js"></script>
+<!--<script src="./components/OurHotels/our-hotels-settings.js"></script>-->
+<!--<script-->
+<!--        src="./components/OurHotels/our-hotels-slider.js"-->
+<!--        type="module"-->
+<!--&gt;</script>-->
+<!--<script-->
+<!--        src="./components/Rixos/rixos.js"-->
+<!--        type="module"-->
+<!--&gt;</script>-->
+<!--<script src="./components/PayAttention/pay-attention-settings.js"></script>-->
+<!--<script src="./components/PayAttention/pay-attention.js" type="module"></script>-->
 <!--<script src="./components/HotelsWeek/hotels-week-settings.js"></script>-->
 <!--<script type="module" src="./components/HotelsWeek/hotels-week.js"></script>-->
 </body>
 </html>
+
+
