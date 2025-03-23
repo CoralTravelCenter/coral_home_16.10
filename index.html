@@ -2,15 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <link href="https://unpkg.com/microtip/microtip.css" rel="stylesheet"/>
     <link href="./global.scss" rel="stylesheet"/>
-    <link href="./components/NarrowSlider/narrow.scss" rel="stylesheet"/>
-    <link href="./components/OurHotels/our-hotels.scss" rel="stylesheet"/>
-    <link href="./components/Rixos/rixos.scss" rel="stylesheet"/>
-    <link href="./components/Bronirovanie/bronirovanie.scss" rel="stylesheet"/>
     <link href="./components/Bonus/bonus-banner.scss" rel="stylesheet"/>
-    <link href="./components/PayAttention/pay-attention.scss" rel="stylesheet"/>
-    <link href="./components/HotelsWeek/hotels-week.scss" rel="stylesheet"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Coral-Home</title>
 </head>
@@ -24,11 +17,7 @@
                           stroke-linejoin="round"/>
                 </svg>
             </button>
-            <swiper-container
-                    data-narrow-slider
-                    init="false"
-            >
-            </swiper-container>
+            <swiper-container data-narrow-slider init="false"></swiper-container>
             <button class="custom-slider-nav-btn slider-bnt-next">
                 <svg fill="none" height="9" viewBox="0 0 6 9" width="6" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.25 1.16504L4.58333 4.49837L1.25 7.83171" stroke="#535353" stroke-linejoin="round"/>
@@ -38,70 +27,68 @@
     </section>
     <section class="coral-custom-section brand-slider">
         <div class="coral-custom-section-wrapper">
-            <swiper-container
-                    data-brand-slider
-                    init=false
-            >
-            </swiper-container>
+            <button class="custom-slider-nav-btn slider-bnt-prev disabled">
+                <svg fill="none" height="9" viewBox="0 0 5 9" width="5" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.58325 1.16504L1.24992 4.49837L4.58325 7.83171" stroke="#535353"
+                          stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="swiper" data-brand-slider>
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <button class="custom-slider-nav-btn slider-bnt-next">
+                <svg fill="none" height="9" viewBox="0 0 6 9" width="6" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.25 1.16504L4.58333 4.49837L1.25 7.83171" stroke="#535353" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </div>
-        <swiper-container
-                data-brand-bg-slider
-                init=false
-        >
-        </swiper-container>
+        <div class="background-slider">
+            <div class="background-slider-wrapper"></div>
+        </div>
     </section>
     <section class="coral-custom-section rixos-elite-banner">
         <div class="coral-custom-section-wrapper">
             <div class="baners">
-                <div
-                        aria-label=""
-                        class="big-one"
-                        role="img"
-                >
+                <div class="big-one" role="img" aria-label="">
+                    <div class="logo">
+                        <img width="130" height="54"
+                             src="https://b2ccdn.coral.ru/content/landing-pages/coral-family/logo-main.webp"
+                             loading="lazy"/>
+                    </div>
                     <div class="content">
-                        <img
-                                class="content-logo"
-                                src="https://b2ccdn.coral.ru/content/landing-pages/home/rixos-svg.svg"
-                        />
-                        <img
-                                class="content-title"
-                                src="https://b2ccdn.coral.ru/content/landing-pages/home/rixos-title.svg"
-                        />
-                        <span class="content-slogan">Все включено - Все эксклюзивно</span>
-                        <a class="coral-main-btn" href="https://www.coral.ru/chain/rixos/egypt/?erid=LjN8KGmvT">Узнать
-                            больше</a>
-                        <span class="advister">Реклама. ООО «ТО КОРАЛ ТРЕВЕЛ ЦЕНТР»</span>
+                        <!--<img class="content-logo" src="https://b2ccdn.coral.ru/content/landing-pages/home/rixos-svg.svg">-->
+                        <!--<img class="content-title" src="https://b2ccdn.coral.ru/content/landing-pages/home/rixos-title.svg">-->
+                        <h3>Отдых. Счастье. Мы.</h3>
+                        <span class="content-slogan">Ваш ребенок в надежных руках</span>
+                        <a href="https://www.coral.ru/coralfamilyclub/" class="coral-main-btn">Узнать больше</a>
+                        <!--<span class="advister">Реклама. ООО «ТО КОРАЛ ТРЕВЕЛ ЦЕНТР»</span>-->
                     </div>
                     <div class="vimeo-video-box rixos-elite">
-                        <div class="vimeo-player playback" data-vimeo-vid="1022499631">
+                        <div class="vimeo-player" data-vimeo-vid="1050784566">
                         </div>
-                        <div class="vimeo-player mobile" data-vimeo-vid="1010580226">
+                        <div class="vimeo-player mobile" data-vimeo-vid="1022499631">
                         </div>
-                        <br>
                     </div>
                 </div>
-                <div aria-label="" class="small-one" role="img">
+                <div class="small-one" role="img" aria-label="">
                     <div class="logo-text">
                         <div class="icon">
-                            <img
-                                    src="https://b2ccdn.coral.ru/content/home/elite_icon_gif.gif"
-                            />
+                            <img width="34" height="34"
+                                 src="https://b2ccdn.coral.ru/content/landing-pages/optimized-home-images/dimand_not_animated.webp"
+                                 loading="lazy"/>
                         </div>
                         <h3>
-                            Концепция<br/>
+                            Концепция<br>
                             Elite Service
                         </h3>
                     </div>
                     <p>
-                        Премиальный отдых<br/>
+                        Премиальный отдых<br>
                         продуманный до мелочей
                     </p>
-                    <a
-                            class="coral-main-btn"
-                            href="https://www.coral.ru/concepts/elite-service/"
-                            rel="noopener noreferrer"
-                            target="_blank"
-                    >
+                    <a class="coral-main-btn" href="https://www.coral.ru/concepts/elite-service/" target="_blank"
+                       rel="noopener noreferrer">
                         Узнать больше
                     </a>
                 </div>
@@ -134,6 +121,77 @@
                 </li>
             </ul>
             <a class="coral-main-btn" href="#">Узнать больше</a>
+        </div>
+    </section>
+    <section class="coral-custom-section russia">
+        <div class="coral-custom-section-wrapper">
+            <h3>Внутренний туризм&nbsp;— это&nbsp;тренд</h3>
+            <div class="container">
+                <div class="block new-year">
+                    <div class="content">
+                        <h3>Россия – отдыхайте, как чувствуете</h3>
+                        <p>Моря, вулканы, озера и&nbsp;другие красоты</p>
+                        <a class="coral-main-btn white"
+                           href="https://www.coral.ru/main/russia/?banner_on_site=main-russia" target="_blank">Узнать
+                            больше</a>
+                    </div>
+                    <div class="visual">
+                        <img width="440" height="537"
+                             src="https://b2ccdn.coral.ru/content/landing-pages/optimized-home-images/rf-1v2.webp"
+                             loading="lazy"/>
+                    </div>
+                </div>
+                <div class="block sowboard">
+                    <div class="content">
+                        <h3>Курорты России – просто взять и&nbsp;отдохнуть</h3>
+                        <p>
+                            Бронируйте курорты<br>
+                            Краснодарского края на&nbsp;лето
+                        </p>
+                        <a class="coral-main-btn white"
+                           href="https://www.coral.ru/main/russia/otdyh-na-chernomorskom-poberezhye-rossii/?banner_on_site=main-leto-v-rossii"
+                           target="_blank">Узнать больше</a>
+                    </div>
+                    <div class="visual">
+                        <img width="905" height="256"
+                             src="https://b2ccdn.coral.ru/content/landing-pages/optimized-home-images/rf-2v2.webp"
+                             loading="lazy"/>
+                    </div>
+                </div>
+                <div class="block premium">
+                    <div class="content">
+                        <h3>
+                            Премиум-отели<br>
+                            России
+                        </h3>
+                        <p>Для&nbsp;тех, кто&nbsp;выбирает комфорт</p>
+                        <a class="coral-main-btn white" href="https://www.coral.ru/main/russia/vip-hotels-russia/"
+                           target="_blank">Узнать больше</a>
+                    </div>
+                    <div class="visual">
+                        <img width="440" height="256"
+                             src="https://b2ccdn.coral.ru/content/landing-pages/home/vnut-turizm-premium.jpg"
+                             loading="lazy"/>
+                    </div>
+                </div>
+                <div class="block excursion">
+                    <div class="content">
+                        <h3>
+                            Экскурсионные<br> туры по России
+                        </h3>
+                        <p>Впечатления,
+                            которые<br> останутся с вами навсегда</p>
+                        <a class="coral-main-btn white"
+                           href="https://www.coral.ru/concepts/ekskursionnie-turi/ekskursionnie-turi-po-rossii/"
+                           target="_blank">Узнать больше</a>
+                    </div>
+                    <div class="visual">
+                        <img width="440" height="256"
+                             src="https://b2ccdn.coral.ru/content/landing-pages/home/vnut-turizm-excursion.jpg"
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="coral-custom-section bonus-banner">
@@ -171,27 +229,36 @@
     <section class="coral-custom-section pay-attention">
         <div class="coral-custom-section__headline"><h2>Обратите внимание</h2></div>
         <div class="coral-custom-section-wrapper">
-            <swiper-container
-                    data-pay-attention-slider
-                    init=false
-            >
-            </swiper-container>
+            <div class="glide" data-pay-attention-slider>
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides"></ul>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+                </div>
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    <button class="glide__bullet" data-glide-dir="=0"></button>
+                    <button class="glide__bullet" data-glide-dir="=1"></button>
+                    <button class="glide__bullet" data-glide-dir="=2"></button>
+                </div>
+            </div>
         </div>
     </section>
 </div>
-<!--<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 <!--<script src="./components/NarrowSlider/narrow-settings.js"></script>-->
-<script
-        src="./components/NarrowSlider/narrow.js"
-        type="module"
-></script>
+<!--<script-->
+<!--        src="./components/NarrowSlider/narrow.js"-->
+<!--        type="module"-->
+<!--&gt;</script>-->
 <!--<script src="./components/OurHotels/our-hotels-settings.js"></script>-->
 <!--<script-->
 <!--        src="./components/OurHotels/our-hotels-slider.js"-->
 <!--        type="module"-->
 <!--&gt;</script>-->
 <!--<script-->
-<!--        src="./components/Rixos/rixos.js"-->
+<!--        src="./components/VideoBanner-Elite/VideoBanner.js"-->
 <!--        type="module"-->
 <!--&gt;</script>-->
 <!--<script src="./components/PayAttention/pay-attention-settings.js"></script>-->
@@ -200,5 +267,3 @@
 <!--<script type="module" src="./components/HotelsWeek/hotels-week.js"></script>-->
 </body>
 </html>
-
-

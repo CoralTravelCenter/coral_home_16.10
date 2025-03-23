@@ -1,53 +1,101 @@
-import {insertOnseHtml, mediaMatcher, sliderParams} from "../../utils";
-import {generateNextButton, generatePrevButton} from "../SliderNavBtn/slider-nav-btn.js";
+import {sliderParams} from "../../utils";
+import './our-hotels.scss'
 
 function brandsSliderInit() {
-	const brand_slider = document.querySelector("[data-brand-slider]");
-	const target_el_bg = document.querySelector('[data-brand-bg-slider]');
+  const SETTINGS = window._coral_group
+  const brandSlider = document.querySelector("[data-brand-slider]");
+  const sliderContainer = brandSlider.querySelector('.swiper-wrapper')
+  const backgroundSlider = document.querySelector(".brand-slider .background-slider-wrapper");
+  const fragmentMain = document.createDocumentFragment();
+  const backgroundFragment = document.createDocumentFragment();
+  const prevBtn = document.querySelector(".brand-slider .slider-bnt-prev");
+  const nextBtn = document.querySelector(".brand-slider .slider-bnt-next");
 
-	const main_slider_markup = window.our_brand_slider
-		.map((el, idx) => {
-			return `
-				<swiper-slide>
-						<div class="content">
-							${(idx === 3) ? `<img class="hotel-logo coral-group" src=${el.brand_logo} alt="">` : `<img class="hotel-logo" src=${el.brand_logo} alt="">`}
-							<h3 style="${(el.CSS) ? `color: ${el.CSS.text_color}` : ''}">${el.brand_name}</h3>
-							${(el.brand_text !== '') ? `<p style="${(el.CSS) ? `color: ${el.CSS.text_color}` : ''}">${el.brand_text}</p>` : ''}
-							<a href="${el.go_to_url}" class="coral-main-btn">Узнать больше</a>
-							<span class="advister" style="${(el.CSS) ? `color: ${el.CSS.text_color}` : ''}">Реклама. ООО «ТО КОРАЛ ТРЕВЕЛ ЦЕНТР»</span>
-						</div>
-				</swiper-slide>
-			`;
-		})
-		.join("");
+  function generateMainMarkup(el) {
+    const swiperSlide = document.createElement('div');
+    swiperSlide.classList.add('swiper-slide');
 
-	const background_slider_markup = window.our_brand_slider
-		.map(el => {
-			return `<swiper-slide>
-					<div role="img" aria-label="${el.SEO.alt}" style="background-image: url(${el.brand_background_desktop});"></div>
-				</swiper-slide>`;
-		}).join("");
+    const contentDiv = document.createElement('div');
+    contentDiv.classList.add('content');
 
-	insertOnseHtml("afterbegin", main_slider_markup, brand_slider);
-	insertOnseHtml("afterbegin", background_slider_markup, target_el_bg);
-	insertOnseHtml("afterend", generateNextButton(), brand_slider);
-	insertOnseHtml("beforebegin", generatePrevButton(), brand_slider);
+    const img = document.createElement('img');
+    img.classList.add('hotel-logo')
+    img.loading = 'lazy'
+    img.width = '112';
+    img.height = '75';
+    img.src = el.brand_logo;
+    img.alt = el.brand_name.text;
 
-	const bg_slider_settings = sliderParams('section.brand-slider');
-	const slider_settings = sliderParams('section.brand-slider')
-	slider_settings.control = brand_slider;
-	bg_slider_settings.pagination = false;
-	slider_settings.breakpoints = {
-		allowTouchMove: true,
-		769: {
-			allowTouchMove: false
-		}
-	}
+    const title = document.createElement('h3');
+    title.innerHTML = el.brand_name.text;
+    title.style.color = el.brand_name.color;
 
-	Object.assign(brand_slider, slider_settings);
-	brand_slider.initialize();
-	Object.assign(target_el_bg, bg_slider_settings);
-	target_el_bg.initialize();
+    contentDiv.append(img, title);
+
+    if (el.brand_text !== '') {
+      const paragraph = document.createElement('p');
+      paragraph.innerHTML = el.brand_text;
+      contentDiv.append(paragraph);
+    }
+
+    const button = document.createElement('a');
+    button.href = el.go_to_url;
+    button.className = 'coral-main-btn';
+    button.textContent = 'Узнать больше';
+    contentDiv.append(button);
+
+    const advister = document.createElement('span');
+    advister.className = 'advister';
+    advister.textContent = el.legal_entity.text;
+    advister.style.color = el.legal_entity.color
+    contentDiv.append(advister);
+
+    swiperSlide.append(contentDiv);
+    fragmentMain.append(swiperSlide);
+  }
+
+  function generateBackgroundMarkup(el) {
+    const backgroundImage = document.createElement('img');
+    backgroundImage.classList.add('background-slide');
+    backgroundImage.src = el.background;
+    backgroundImage.alt = el.brand_name.text;
+    backgroundImage.width = '1440';
+    backgroundImage.height = '430';
+    backgroundImage.loading = 'lazy'
+
+    backgroundFragment.append(backgroundImage)
+  }
+
+  function disableNavigationButtons(swiper) {
+    swiper.activeIndex === 0 ? prevBtn.classList.add('disabled') : prevBtn.classList.remove('disabled');
+    swiper.activeIndex === swiper.slides.length - 1 ? nextBtn.classList.add('disabled') : nextBtn.classList.remove('disabled');
+  }
+
+  SETTINGS.forEach((el) => {
+    generateMainMarkup(el)
+    generateBackgroundMarkup(el)
+  });
+
+  sliderContainer.append(fragmentMain);
+  backgroundSlider.append(backgroundFragment);
+
+  const sliderSettings = sliderParams('section.brand-slider');
+  sliderSettings.loop = false
+  sliderSettings.breakpoints = {
+    allowTouchMove: true,
+    769: {
+      allowTouchMove: false
+    }
+  }
+  sliderSettings.on = {
+    init: swiper => disableNavigationButtons(swiper),
+    slideChange: swiper => {
+      backgroundSlider.style.transform = `translateX(-${swiper.activeIndex}00%)`;
+      disableNavigationButtons(swiper);
+    }
+  }
+
+  new Swiper(brandSlider, sliderSettings);
 }
 
-if (!window.location.origin.includes('backoffice')) brandsSliderInit()
+if (!window.location.origin.includes('backoffice')) brandsSliderInit();

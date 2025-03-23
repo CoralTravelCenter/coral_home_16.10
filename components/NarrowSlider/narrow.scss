@@ -1,50 +1,36 @@
-.layout-container-limit:has(section.narrow-slider) {
-	padding: 0 !important;
-	max-width: unset !important;
-}
-
 section.narrow-slider {
-	padding-top: 40px;
-	.coral-custom-section-wrapper {
-		swiper-container {
-			display: flex;
-			align-items: stretch;
-		}
+  padding-top: 40px;
 
-		swiper-slide {
-			height: auto;
-			.content {
-				border-radius: 20px;
-				overflow: hidden;
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				background: #fff;
-				min-height: 315px;
+  .coral-custom-section-wrapper {
+    swiper-slide {
+      height: auto;
 
-				.text-content {
-					padding: 32px 48px;
-					display: flex;
-					flex-direction: column;
-					align-items: start;
-					gap: 20px;
-				}
+      .content {
+        border-radius: 20px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background: #fff;
+        min-height: 315px;
 
-				.visual {
-					border-radius: 20px;
-					overflow: hidden;
-					position: relative;
+        .text-content {
+          padding: 32px 48px;
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          gap: 20px;
+        }
 
-					#narrow-tooltip-toggler {
-						position: absolute;
-						top: 16px;
-						right: 16px;
-					}
-				}
-			}
-		}
+        .visual {
+          border-radius: 20px;
+          overflow: hidden;
+          position: relative;
+        }
+      }
+    }
 
-		.coral-main-btn {
-			margin-top: auto;
-		}
-	}
+    .coral-main-btn {
+      margin-top: auto;
+    }
+  }
 }

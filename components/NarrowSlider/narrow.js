@@ -1,13 +1,13 @@
 import {cleanText, sliderParams} from "../../utils";
+import './narrow.scss';
 
 function narrowInit() {
-  const SETTINGS = window.narrow_slider;
+  const SETTINGS = window._narrow_slider;
   const narrow_slider = document.querySelector("[data-narrow-slider]");
   const fragment = document.createDocumentFragment();
 
   function generateMarkup(el) {
     const swiperSlide = document.createElement('swiper-slide');
-    swiperSlide.setAttribute('lazy', true);
 
     const contentDiv = document.createElement('div');
     contentDiv.className = 'content';
@@ -17,12 +17,12 @@ function narrowInit() {
 
     const title = document.createElement('h3');
     title.innerHTML = el.title;
-    textContentDiv.appendChild(title);
+    textContentDiv.append(title);
 
     if (el.paragraph) {
       const paragraph = document.createElement('p');
       paragraph.innerHTML = el.paragraph;
-      textContentDiv.appendChild(paragraph);
+      textContentDiv.append(paragraph);
     }
 
     const button = document.createElement('a');
@@ -30,16 +30,23 @@ function narrowInit() {
     button.href = el.button_link;
     button.target = '_blank';
     button.textContent = el.button_text;
-    textContentDiv.appendChild(button);
+    textContentDiv.append(button);
 
     const visualDiv = document.createElement('div');
     visualDiv.className = 'visual';
 
     const image = document.createElement('img');
-    image.src = el.img;
+    image.setAttribute('data-src', el.img)
+    image.classList.add('lazy-image');
     image.alt = cleanText(el.title);
-    image.loading = 'lazy'
-    visualDiv.appendChild(image);
+    image.width = '675'
+    image.height = '315'
+
+
+    const loader = document.createElement('div');
+    loader.classList.add('swiper-lazy-preloader');
+
+    visualDiv.append(image, loader);
 
 
     if (el.legal_entity !== '') {
@@ -47,26 +54,24 @@ function narrowInit() {
       ligal.classList.add('coral-erid-ligal');
       ligal.style.color = el.legal_entity.color;
       ligal.innerHTML = el.legal_entity.text;
-      visualDiv.appendChild(ligal);
+      visualDiv.append(ligal);
     }
 
-    contentDiv.appendChild(textContentDiv);
-    contentDiv.appendChild(visualDiv);
-    swiperSlide.appendChild(contentDiv);
-    fragment.appendChild(swiperSlide);
+    contentDiv.append(textContentDiv);
+    contentDiv.append(visualDiv);
+    swiperSlide.append(contentDiv);
+    fragment.append(swiperSlide);
   }
 
   SETTINGS.forEach(el => generateMarkup(el));
-  narrow_slider.appendChild(fragment);
+  narrow_slider.append(fragment);
 
-  const params = sliderParams('section.narrow-slider')
-  params.breakpoints = {
-    769: {
-      allowTouchMove: false
-    }
-  };
+  const params = sliderParams('section.narrow-slider', {
+    autoHeight: true,
+  });
+
   Object.assign(narrow_slider, params);
-  narrow_slider.initialize()
+  narrow_slider.initialize();
 }
 
-if (!window.location.origin.includes('backoffice')) narrowInit();
+if (!window.location.origin.includes('backoffice')) narrowInit()

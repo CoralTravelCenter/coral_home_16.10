@@ -1,46 +1,32 @@
-import {insertOnseHtml, mediaMatcher, sliderParams} from "../../utils";
-import {generateNextButton, generatePrevButton} from "../SliderNavBtn/slider-nav-btn.js";
+import {insertOnseHtml} from "../../utils";
+import './pay-attention.scss'
 
 function payAttentionInit() {
-	const pay_attention_slider = document.querySelector("[data-pay-attention-slider]");
+  const pay_attention_slider = document.querySelector("[data-pay-attention-slider] .glide__slides");
 
-	const markup = window.pay_attention_slider
-		.map((el) => {
-			return `
-				<swiper-slide style="background-image: url(${el.bacground_img});">
+  const markup = window.pay_attention_slider
+    .map((el) => {
+      return `
+				<li class="glide__slide">
 					<div class="content-wrapper">
 						<h3 style="${(el.CSS) ? `color: ${el.CSS.color}` : ''}">${el.headline}</h3>
 						<p style="${(el.CSS) ? `color: ${el.CSS.color}` : ''}">${el.text}</p>
 						<a class="coral-main-btn white" href="${el.action.go_to}">${el.action.title}</a>
 					</div>
-				</swiper-slide>
+					<div class="visual">
+						<img src="${el.bacground_img}" loading="lazy">
+					</div>
+				</li>
 			`;
-		})
-		.join("");
+    })
+    .join("");
 
-	insertOnseHtml("afterbegin", markup, pay_attention_slider);
-	insertOnseHtml("afterend", generateNextButton(), pay_attention_slider);
-	insertOnseHtml("beforebegin", generatePrevButton(), pay_attention_slider);
+  insertOnseHtml("afterbegin", markup, pay_attention_slider);
 
-	const slider_settings = sliderParams('section.pay-attention');
-	slider_settings.slidesPerView = 2
-	slider_settings.spaceBetween = 24
-	slider_settings.breakpoints = {
-		1024: {
-			slidesPerView: 3
-		},
-		1240: {
-			slidesPerView: 4
-		}
-	}
-
-
-	if (pay_attention_slider.childElementCount <= 4) {
-		pay_attention_slider.nextElementSibling.setAttribute('data-hidden', true)
-		pay_attention_slider.previousElementSibling.setAttribute('data-hidden', true)
-	}
-	Object.assign(pay_attention_slider, slider_settings);
-	pay_attention_slider.initialize();
+  new Glide(document.querySelector("[data-pay-attention-slider]"), {
+    type: 'carousel',
+    perView: 4,
+  }).mount()
 }
 
 if (!window.location.origin.includes('backoffice')) payAttentionInit()
