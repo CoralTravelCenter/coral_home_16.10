@@ -9,7 +9,7 @@ export default defineConfig({
         video: './components/VideoBanner-Elite/VideoBanner.js',
         bronirovanie: './components/Bronirovanie/bronirovanie.js',
         hotels_of_week: './components/HotelsWeek/hotels-week.js',
-        attention: './components/PayAttention/pay-attention.js'
+        // attention: './components/PayAttention/pay-attention.js'
       },
       output: {
         entryFileNames: '[name].js',
