@@ -13,84 +13,62 @@ section.brand-slider {
     padding-inline: 80px;
   }
 
-  .swiper {
-    min-height: var(--min-height);
-
-    .swiper-pagination {
-      position: absolute;
-      margin-top: 0;
-      bottom: 16px !important;
-
-      .swiper-pagination-bullet {
-        background: #fff;
-      }
-    }
-  }
-
-  .swiper-wrapper {
+  swiper-container:not(.brand-background-slider) {
     z-index: 2;
     position: relative;
     min-height: var(--min-height);
-
-    .swiper-slide {
-      display: block;
-      text-decoration: none !important;
-
-      .content {
-        min-height: var(--min-height);
-        background-repeat: no-repeat;
-        padding-block: 40px;
-        background-position: left center;
-        background-size: 27%;
-        display: flex;
-        justify-content: end;
-        flex-direction: column;
-        align-items: start;
-        gap: 12px;
-
-
-        img.hotel-logo {
-          margin-top: auto;
-          max-width: 112px;
-          max-height: 75px;
-        }
-
-        img.hotel-logo.coral-group {
-          max-width: 217px;
-          object-fit: contain;
-        }
-
-        h3 {
-          color: #fff;
-        }
-
-        span.advister {
-          font-size: 10px;
-          margin-top: auto;
-          color: #fff;
-        }
-      }
-    }
   }
 
-  .background-slider {
+  swiper-container::part(pagination) {
     position: absolute;
-    width: 100vw;
-    max-width: 1920px;
-    overflow-x: hidden;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 16px !important;
+    margin: 0 !important;
+  }
 
-    .background-slider-wrapper {
+  swiper-container::part(bullet) {
+    background: #fff;
+  }
+
+  swiper-container::part(bullet-active) {
+    background: #fff;
+  }
+
+  swiper-slide {
+    display: block;
+    text-decoration: none !important;
+
+    .content {
+      min-height: var(--min-height);
+      background-repeat: no-repeat;
+      padding-block: 40px;
+      background-position: left center;
+      background-size: 27%;
       display: flex;
-      height: var(--min-height);
-      min-width: 100%;
-      transition: transform 300ms ease-out;
+      justify-content: end;
+      flex-direction: column;
+      align-items: start;
+      gap: 12px;
 
-      > * {
-        flex: 1;
-        min-width: 100%;
+
+      img.hotel-logo {
+        margin-top: auto;
+        max-width: 112px;
+        max-height: 75px;
+      }
+
+      img.hotel-logo.coral-group {
+        max-width: 217px;
+        object-fit: contain;
+      }
+
+      h3 {
+        color: #fff;
+      }
+
+      span.advister {
+        font-size: 10px;
+        margin-top: auto;
+        color: #fff;
       }
     }
   }
@@ -101,5 +79,16 @@ section.brand-slider {
 
   .custom-slider-nav-btn.slider-bnt-prev {
     left: 8px;
+  }
+
+  [data-brand-background] {
+    position: absolute;
+    width: 100vw;
+    max-width: 1920px;
+    overflow-x: hidden;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: var(--min-height);
   }
 }

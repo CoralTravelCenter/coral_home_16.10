@@ -1,4 +1,4 @@
-//@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
 :root {
   --section-width: 1530px;
@@ -14,11 +14,11 @@
   box-sizing: border-box;
 }
 
-//body {
-//  font-family: "Manrope", sans-serif;
-//  margin: 0;
-//  background: antiquewhite;
-//}
+body {
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  background: antiquewhite;
+}
 
 body:after {
   content: '';
@@ -211,6 +211,7 @@ swiper-container::part(bullet-active) {
 .lazy-image {
   visibility: hidden;
 }
+
 
 //div[id*="hotDealsWidget"],
 //.news-slider-block {

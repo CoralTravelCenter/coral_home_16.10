@@ -4,23 +4,18 @@ import './our-hotels.scss'
 function brandsSliderInit() {
   const SETTINGS = window._coral_group
   const brandSlider = document.querySelector("[data-brand-slider]");
-  const sliderContainer = brandSlider.querySelector('.swiper-wrapper')
-  const backgroundSlider = document.querySelector(".brand-slider .background-slider-wrapper");
+  const backgroundSlider = document.querySelector("[data-brand-background]");
   const fragmentMain = document.createDocumentFragment();
   const backgroundFragment = document.createDocumentFragment();
-  const prevBtn = document.querySelector(".brand-slider .slider-bnt-prev");
-  const nextBtn = document.querySelector(".brand-slider .slider-bnt-next");
 
   function generateMainMarkup(el) {
-    const swiperSlide = document.createElement('div');
-    swiperSlide.classList.add('swiper-slide');
+    const swiperSlide = document.createElement('swiper-slide');
 
     const contentDiv = document.createElement('div');
     contentDiv.classList.add('content');
 
     const img = document.createElement('img');
     img.classList.add('hotel-logo')
-    img.loading = 'lazy'
     img.width = '112';
     img.height = '75';
     img.src = el.brand_logo;
@@ -40,6 +35,7 @@ function brandsSliderInit() {
 
     const button = document.createElement('a');
     button.href = el.go_to_url;
+    button.target = '_blank';
     button.className = 'coral-main-btn';
     button.textContent = 'Узнать больше';
     contentDiv.append(button);
@@ -55,6 +51,7 @@ function brandsSliderInit() {
   }
 
   function generateBackgroundMarkup(el) {
+    const swiperSlide = document.createElement('swiper-slide');
     const backgroundImage = document.createElement('img');
     backgroundImage.classList.add('background-slide');
     backgroundImage.src = el.background;
@@ -62,40 +59,29 @@ function brandsSliderInit() {
     backgroundImage.width = '1440';
     backgroundImage.height = '430';
     backgroundImage.loading = 'lazy'
-
-    backgroundFragment.append(backgroundImage)
+    swiperSlide.append(backgroundImage);
+    backgroundFragment.append(swiperSlide)
   }
 
-  function disableNavigationButtons(swiper) {
-    swiper.activeIndex === 0 ? prevBtn.classList.add('disabled') : prevBtn.classList.remove('disabled');
-    swiper.activeIndex === swiper.slides.length - 1 ? nextBtn.classList.add('disabled') : nextBtn.classList.remove('disabled');
-  }
 
   SETTINGS.forEach((el) => {
     generateMainMarkup(el)
     generateBackgroundMarkup(el)
   });
 
-  sliderContainer.append(fragmentMain);
+  brandSlider.append(fragmentMain);
   backgroundSlider.append(backgroundFragment);
 
-  const sliderSettings = sliderParams('section.brand-slider');
-  sliderSettings.loop = false
-  sliderSettings.breakpoints = {
-    allowTouchMove: true,
-    769: {
-      allowTouchMove: false
-    }
-  }
-  sliderSettings.on = {
-    init: swiper => disableNavigationButtons(swiper),
-    slideChange: swiper => {
-      backgroundSlider.style.transform = `translateX(-${swiper.activeIndex}00%)`;
-      disableNavigationButtons(swiper);
-    }
-  }
+  const params = sliderParams('section.brand-slider', 1, {
+    controller: {
+      control: backgroundSlider
+    },
+  })
 
-  new Swiper(brandSlider, sliderSettings);
+  Object.assign(brandSlider, params);
+  brandSlider.initialize();
+  Object.assign(backgroundSlider, {});
+  backgroundSlider.initialize();
 }
 
 if (!window.location.origin.includes('backoffice')) brandsSliderInit();
